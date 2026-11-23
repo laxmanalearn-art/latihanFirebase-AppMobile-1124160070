@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'register_page.dart';
 import '../services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -125,6 +126,19 @@ class _LoginPageState extends State<LoginPage> {
                         ? const CircularProgressIndicator()
                         : const Text('Login'),
                   ),
+                ),
+                const SizedBox(height: 16),
+
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterPage(),
+                      ),
+                    );
+                  },
+                  child: const Text('Belum punya akun? Daftar'),
                 ),
               ],
             ),

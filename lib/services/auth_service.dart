@@ -27,6 +27,7 @@ class AuthService {
     await _auth.signOut();
   }
 
-  // Mengambil pengguna yang sedang login
   User? get currentUser => _auth.currentUser;
+
+  Stream<User?> get authStateChanges => _auth.authStateChanges();
 }
